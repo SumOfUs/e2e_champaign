@@ -1,0 +1,17 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Omar Sahyoun",
+  "license": "MIT",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "braintree": "^2.8.0",
+    "cypress": "^2.1.0",
+    "moment": "^2.21.0",
+    "moment-timezone": "^0.5.14"
+  }
+}
