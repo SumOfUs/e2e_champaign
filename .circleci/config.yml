@@ -34,7 +34,7 @@ jobs:
             - cypress.json
             - index.html
 
-  testA:
+  test:
     <<: *defaults
     steps:
       - attach_workspace:
