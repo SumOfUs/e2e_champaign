@@ -9,7 +9,10 @@ defaults: &defaults
       environment:
         ## this enables colors in the output
         TERM: xterm
-
+scheduled-workflow:
+  triggers:
+    - schedule:
+        cron: "0 */1 * * *"
 jobs:
   build:
     <<: *defaults

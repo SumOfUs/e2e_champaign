@@ -1,10 +1,10 @@
 
 const {
-  AK_USER,
-  ak_password
+  AK_USERNAME,
+  AK_PASSWORD,
 } = process.env;
 
-const host = `https://${AK_USER}:${AK_PASSWORD}@act.sumofus.org/rest/v1`;
+const host = `https://${AK_USERNAME}:${AK_PASSWORD}@act.sumofus.org/rest/v1`;
 const axios = require('axios');
 
 let email;
