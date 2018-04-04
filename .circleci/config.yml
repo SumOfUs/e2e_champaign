@@ -30,7 +30,7 @@ jobs:
           paths:
             - node_modules
       - persist_to_workspace:
-          root: /root/app
+          root: ~/app
           paths:
             - node_modules
             - cypress
@@ -41,12 +41,12 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: /root/app
+          at: ~/app
       - run: ls -la cypress
       - run: ls -la cypress/integration
       - run:
           name: Running E2E tests A
-          command: $(npm bin)/cypress run --spec cypress/integration/petition_spec.js --reporter junit --reporter-options "mochaFile=results/my-test-output.xml"
+          command: $(npm bin)/cypress run --spec cypress/integration/petition_spec.js --reporter junit --reporter-options "mochaFile=results/my-test-output.xml" --env AK_USERNAME=$AK_USERNAME,AK_PASSWORD=$AK_PASSWORD
       - store_test_results:
           path: results
       - store_artifacts:
