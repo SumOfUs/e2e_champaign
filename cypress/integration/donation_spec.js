@@ -7,14 +7,14 @@ const {
   CC_NUM,
   CC_CVV,
   CC_EXP,
-  EMAIL,
-} = process.env;
+
+const EMAIL = "omar+cc_test@sumofus.org"
 
 const gateway = braintree.connect({
   environment: braintree.Environment.Production,
-  merchantId: MERCHANT_ID,
-  publicKey: PUBLIC_KEY,
-  privateKey: PRVIATE_KEY
+  merchantId: Cypress.env('MERCHANT_ID'),
+  publicKey: Cypress.env('PUBLIC_KEY'),
+  privateKey: Cypress.env('PRVIATE_KEY'),
 });
 
 
@@ -39,7 +39,6 @@ const getTransactions = () => {
     });
   })
 };
-
 
 describe("first test", () => {
   it("does stuff", () => {
@@ -74,7 +73,7 @@ describe("first test", () => {
         const doc = iframe.contents().find("body");
 
         cy.wrap(doc).find('input#credit-card-number')
-            .type(CC_NUM)
+            .type(Cypress.env('CC_NUM'))
     });
 
     cy.get('iframe#braintree-hosted-field-cvv')
@@ -82,7 +81,7 @@ describe("first test", () => {
         const doc = iframe.contents().find("body");
 
         cy.wrap(doc).find("input[name='cvv']")
-            .type(CC_CVV, {force: true});
+            .type(Cypress.env('CC_CVV'), {force: true});
     });
 
     cy.get('iframe#braintree-hosted-field-expirationDate')
@@ -90,7 +89,7 @@ describe("first test", () => {
         const doc = iframe.contents().find("body");
 
         cy.wrap(doc).find("input[name='expiration']")
-          .type(CC_EXP, {force: true});
+          .type(Cypress.env('CC_EXP'), {force: true});
     });
 
     cy.get(".Button-root.DonateButton").click();
