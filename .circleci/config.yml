@@ -50,16 +50,15 @@ jobs:
       - store_artifacts:
           path: cypress/screenshots
 
-
 workflows:
   version: 2
-  build_and_test:
+  commit:
     jobs:
       - build
       - test:
           requires:
             - build
-  hourly:
+  nightly:
     triggers:
       - schedule:
           cron: "0 * * * *"
@@ -70,5 +69,5 @@ workflows:
     jobs:
       - build
       - test:
-          require:
+          requires:
             - build
