@@ -10,8 +10,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "braintree": "^2.8.0",
-    "cypress": "^2.1.0",
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14"
+  },
+  "devDependencies": {
+    "cypress": "^3.0.1"
   }
 }
