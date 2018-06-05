@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "cypress:open": "cypress open",
-    "test-junit": "cypress run --reporter junit --reporter-options 'mochaFile=junit-results/my-test-output.xml'",
+    "test-junit": "cypress run --reporter junit --reporter-options 'mochaFile=junit-results/my-test-output.xml' --spec cypress/integration/petition_spec.js  --env AK_USERNAME=$AK_USERNAME,AK_PASSWORD=$AK_PASSWORD",
     "test-multiple": "cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json"
   },
   "dependencies": {

@@ -1,14 +1,6 @@
 const braintree = require("braintree");
 
-const {
-  MERCHANT_ID,
-  PUBLIC_KEY,
-  PRVIATE_KEY,
-  CC_NUM,
-  CC_CVV,
-  CC_EXP,
-
-const EMAIL = "omar+cc_test@sumofus.org"
+const EMAIL = "omar+cc_test@sumofus.org";
 
 const gateway = braintree.connect({
   environment: braintree.Environment.Production,
@@ -16,7 +8,6 @@ const gateway = braintree.connect({
   publicKey: Cypress.env('PUBLIC_KEY'),
   privateKey: Cypress.env('PRVIATE_KEY'),
 });
-
 
 const getTransactions = () => {
   const MS_PER_MINUTE = 60000;
@@ -102,7 +93,7 @@ describe("first test", () => {
       return getTransactions().then((response) => {
         assert.isAbove(response.ids.length, 0, "no braintree transactions returned");
         response.each(function (err, transaction) {
-          console.log(transaction.status);
+          cy.log(transaction.status);
           expect(transaction.status).to.eq('submitted_for_settlement')
         });
       });
