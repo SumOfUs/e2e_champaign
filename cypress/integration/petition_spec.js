@@ -83,6 +83,6 @@ describe("Petition Action", () => {
         .then(unsubscribe)
     });
 
-    cy.contains("Now, will you share the campaign");
+    cy.contains("Can you chip in");
   });
 });
