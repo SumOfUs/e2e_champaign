@@ -10,7 +10,7 @@
     "test-multiple": "cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "braintree": "^2.8.0",
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14"
