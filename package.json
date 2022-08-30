@@ -13,7 +13,7 @@
     "axios": "^0.18.0",
     "braintree": "^2.8.0",
     "moment": "^2.21.0",
-    "moment-timezone": "^0.5.14"
+    "moment-timezone": "^0.5.35"
   },
   "devDependencies": {
     "cypress": "^3.1.0",
