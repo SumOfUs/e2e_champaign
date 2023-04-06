@@ -15,7 +15,7 @@ jobs:
       - restore_cache:
           keys:
             - cache-dirs
-      - run: npm ci
+      - run: npm i
       - save_cache:
           key: cache-dirs
           paths:
